@@ -7,9 +7,14 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(of = "id")
 public class Customer {
 
+    // -- Fields --
     private int id;
     private String name;
     private String mail;
+
+    // -- Constructors
+    public Customer() {
+    }
 
     public Customer(String name, String mail) {
         this.name = name;

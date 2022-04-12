@@ -1,6 +1,6 @@
 package com.example.CRMSystem.util;
 
-public final class ViewNames {
+public class Mappings {
 
     // -- Constants --
     public static final String HOME = "home";
@@ -11,6 +11,8 @@ public final class ViewNames {
     public static final String ADD_CUSTOMER = "add_customer";
 
     // -- Constructor --
-    private ViewNames() {
+    private Mappings(){
+
     }
+
 }

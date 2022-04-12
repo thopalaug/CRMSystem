@@ -6,22 +6,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HomeController {
+public class OrderController {
 
     // -- Fields --
 
-    // -- Constructor --
-    public HomeController() {
+    // -- Constructor
+    public OrderController() {
     }
-
-
 
     // -- Request Methods --
-    @GetMapping(Mappings.HOME)
-    public String home() {
-        return ViewNames.HOME;
+    @GetMapping(Mappings.ORDER)
+    public String order(){
+        return ViewNames.ORDER;
     }
-
-
 
 }
