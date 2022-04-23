@@ -9,6 +9,8 @@ public final class ViewNames {
     public static final String PRODUCT = "product";
 
     public static final String ADD_CUSTOMER = "add_customer";
+    public static final String EDIT_CUSTOMER = "edit_customer";
+    public static final String VIEW_CUSTOMER = "view_customer";
 
     // -- Constructor --
     private ViewNames() {

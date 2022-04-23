@@ -23,7 +23,8 @@
                     <td th:text="${customer.id}">Customer Id</td>
                     <td th:text="${customer.name}">Customer Name</td>
                     <td th:text="${customer.mail}">Customer email</td>
-                    <td><a th:href="add_customer" th:value="*{customer.id}"/>Edit Customer</td>
+                    <td><a th:href="edit_customer"/>Edit Customer</td>
+                    <td><a th:href="delete_customer"/>Delete Customer</td>
 
                 </tr>
             </table>
