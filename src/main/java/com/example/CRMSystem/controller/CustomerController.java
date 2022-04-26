@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+
 @Controller
 public class CustomerController {
 
@@ -48,26 +49,23 @@ public class CustomerController {
 
     @PostMapping(Mappings.CUSTOMER)
     public String addCustomer(@ModelAttribute(AttributeNames.CUSTOMER) Customer customer){
-        if(customer.getId() == 0){
-            customerService.addCustomer(customer);
-        }else{
-            customerService.updateCustomer(customer);
-        }
+        customerService.addCustomer(customer);
         return Mappings.CUSTOMER;
     }
 
-    @GetMapping("/{id}")
-    public String editCustomer(@PathVariable int id, Model model){
+    @GetMapping(Mappings.EDIT_CUSTOMER)
+    public ModelAndView editCustomer(@PathVariable("id") int id, Model model){
+        ModelAndView mav = new ModelAndView(Mappings.EDIT_CUSTOMER);
         Customer customer = customerData().getCustomer(id);
-        model.addAttribute(AttributeNames.CUSTOMER, customer);
-        return ViewNames.EDIT_CUSTOMER;
+        mav.addObject("customer", customer);
+        return mav;
     }
 
 
     @GetMapping(Mappings.DELETE_CUSTOMER)
-    public String deleteCustomer(@RequestParam int id){
+    public String deleteCustomer(@PathVariable("id") int id){
         customerService.deleteCustomer(id);
-        return "redirect:/" + Mappings.CUSTOMER;
+        return "redirect:" + Mappings.CUSTOMER;
     }
 
 }

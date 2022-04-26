@@ -23,14 +23,14 @@
                     <td th:text="${customer.id}">Customer Id</td>
                     <td th:text="${customer.name}">Customer Name</td>
                     <td th:text="${customer.mail}">Customer email</td>
-                    <td><a th:href="edit_customer"/>Edit Customer</td>
-                    <td><a th:href="delete_customer"/>Delete Customer</td>
+                    <td><a th:href="@{/edit_customer/{id}(id=${customer.id})}">Edit Customer</a></td>
+                    <td><a th:href="@{/delete_customer/{id}(id=${customer.id})}">Delete Customer</a></td>
 
                 </tr>
             </table>
         </div>
         <div align="center">
-            <h3><a th:href="add_customer">Add New Customer</a></h3>
+            <h3><a th:href="@{/add_customer}">Add New Customer</a></h3>
             <h3><a th:href="home">Home</a></h3>
         </div>
     </div>
