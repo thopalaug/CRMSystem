@@ -50,22 +50,30 @@ public class CustomerController {
     @PostMapping(Mappings.CUSTOMER)
     public String addCustomer(@ModelAttribute(AttributeNames.CUSTOMER) Customer customer){
         customerService.addCustomer(customer);
-        return Mappings.CUSTOMER;
+        return Mappings.REDIRECT + Mappings.CUSTOMER;
     }
 
     @GetMapping(Mappings.EDIT_CUSTOMER)
-    public ModelAndView editCustomer(@PathVariable("id") int id, Model model){
-        ModelAndView mav = new ModelAndView(Mappings.EDIT_CUSTOMER);
+    public String editCustomer(@PathVariable("id") int id, Model model){
         Customer customer = customerData().getCustomer(id);
-        mav.addObject("customer", customer);
-        return mav;
+        model.addAttribute(AttributeNames.CUSTOMER, customer);
+        return ViewNames.EDIT_CUSTOMER;
+    }
+
+    /*
+    Post method for edit
+     */
+    @PostMapping(Mappings.EDIT_CUSTOMER)
+    public String editCustomer(@ModelAttribute(AttributeNames.CUSTOMER) Customer customer){
+        customerData().updateCustomer(customer);
+        return Mappings.REDIRECT + Mappings.CUSTOMER;
     }
 
 
     @GetMapping(Mappings.DELETE_CUSTOMER)
     public String deleteCustomer(@PathVariable("id") int id){
         customerService.deleteCustomer(id);
-        return "redirect:" + Mappings.CUSTOMER;
+        return Mappings.REDIRECT + Mappings.CUSTOMER;
     }
 
 }
