@@ -5,26 +5,27 @@
     <title>Edit Customer</title>
 </head>
 <body>
-<div align="center">
-    <form action="#" th:action="@{customer}" th:object="${customer}" method="post">
-        <table>
-            <tr>
-                <td><Label th:text="Name">Name</Label></td>
-                <td><input th:type="text" th:field="*{name}"></td>
-            </tr>
+    <div align="center">
+        <h2>Edit Customer</h2>
+        <form action="#" th:action="@{customer}" th:object="${customer}" method="post">
+            <table>
+                <tr>
+                    <td><Label th:text="Name">Name</Label></td>
+                    <td><input th:type="text" th:field="*{name}"></td>
+                </tr>
 
-            <tr>
-                <td><Label th:text="Mail">Mail</Label></td>
-                <td><input th:type="text" th:field="*{mail}"></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Submit"/></td>
-            </tr>
+                <tr>
+                    <td><Label th:text="Mail">Mail</Label></td>
+                    <td><input th:type="text" th:field="*{mail}"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"/></td>
+                </tr>
 
-        </table>
+            </table>
 
-    </form>
-</div>
+        </form>
+    </div>
 
 </body>
 </html>
