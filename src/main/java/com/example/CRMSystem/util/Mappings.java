@@ -11,7 +11,7 @@ public class Mappings {
     public static final String ADD_CUSTOMER = "add_customer";
     public static final String EDIT_CUSTOMER = "edit_customer/{id}";
     public static final String DELETE_CUSTOMER = "delete_customer/{id}";
-    public static final String VIEW_CUSTOMER = "view_customer";
+    public static final String VIEW_CUSTOMER = "view_customer/{id}";
 
     public static final String REDIRECT = "redirect:/";
 

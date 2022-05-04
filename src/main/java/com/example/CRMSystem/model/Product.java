@@ -8,9 +8,13 @@ import lombok.EqualsAndHashCode;
 public class Product {
 
     private int id;
-    private int price;
+    private String name;
     private String productDetails;
+    private int price;
 
-    public Product() {
+    public Product(String name, String productDetails, int price) {
+        this.name = name;
+        this.productDetails = productDetails;
+        this.price = price;
     }
 }

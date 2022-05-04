@@ -3,13 +3,10 @@ package com.example.CRMSystem.controller;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class OrderController {
+public class ViewCustomerController {
 
-    // -- Fields --
-
-
-    // -- Constructor
-
+    public ViewCustomerController() {
+    }
 
 
 }

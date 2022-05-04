@@ -3,9 +3,6 @@ package com.example.CRMSystem.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Data
 @EqualsAndHashCode(of = "id")
 public class Customer {
@@ -14,7 +11,7 @@ public class Customer {
     private int id;
     private String name;
     private String mail;
-    private List<Order> orderList = new ArrayList<>();
+    private OrderData orderData;
 
     // -- Constructors
     public Customer() {
@@ -24,6 +21,8 @@ public class Customer {
         this.name = name;
         this.mail = mail;
     }
+
+
 
 
 }

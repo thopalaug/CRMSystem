@@ -10,7 +10,6 @@ import java.util.ListIterator;
 public class CustomerData {
 
     private int id_value = 1;
-
     private final ArrayList<Customer> listOfCustomers = new ArrayList<>();
 
     public CustomerData() {
@@ -51,17 +50,21 @@ public class CustomerData {
         }
     }
 
+    // Feil ligger i denne metoden
     public void updateCustomer(@NonNull Customer customerToUpdate){
+
         ListIterator<Customer> customerListIterator = listOfCustomers.listIterator();
 
         while(customerListIterator.hasNext()){
             Customer customer = customerListIterator.next();
-
+            System.out.println(customerToUpdate.toString());
             if(customer.equals(customerToUpdate)){
                 customerListIterator.set(customerToUpdate);
+
                 break;
             }
         }
+
     }
 
 

@@ -17,6 +17,7 @@
                     <th>Customer Email</th>
                     <th>Edit Customer</th>
                     <th>Delete Costumer</th>
+                    <th>View Customer</th>
                 </tr>
 
                 <tr th:each="customer : ${customerData.getCustomers}">
@@ -25,11 +26,12 @@
                     <td th:text="${customer.mail}">Customer email</td>
                     <td><a th:href="@{/edit_customer/{id}(id=${customer.id})}">Edit Customer</a></td>
                     <td><a th:href="@{/delete_customer/{id}(id=${customer.id})}">Delete Customer</a></td>
+                    <td><a th:href="@{/view_customer/{id}(id=${customer.id})}">View Customer</a></td>
 
                 </tr>
             </table>
         </div>
-        <div align="center">
+        <div>
             <h3><a th:href="@{/add_customer}">Add New Customer</a></h3>
             <h3><a th:href="home">Home</a></h3>
         </div>

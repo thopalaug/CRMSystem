@@ -64,13 +64,19 @@ public class CustomerController {
         return ViewNames.EDIT_CUSTOMER;
     }
 
-    /*
-    Post method for edit
-     */
+
     @PostMapping(Mappings.EDIT_CUSTOMER)
     public String editCustomer(@ModelAttribute(AttributeNames.CUSTOMER) Customer customer, BindingResult bindingResult){
         customerData().updateCustomer(customer);
         return Mappings.REDIRECT + Mappings.CUSTOMER;
+    }
+
+
+    @GetMapping(Mappings.VIEW_CUSTOMER)
+    public String viewCustomer(@PathVariable("id") int id, Customer customer, Model model){
+        customer = customerData().getCustomer(id);
+        model.addAttribute(AttributeNames.CUSTOMER, customer);
+        return ViewNames.VIEW_CUSTOMER;
     }
 
 
