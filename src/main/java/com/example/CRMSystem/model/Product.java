@@ -12,6 +12,9 @@ public class Product {
     private String productDetails;
     private int price;
 
+    public Product() {
+    }
+
     public Product(String name, String productDetails, int price) {
         this.name = name;
         this.productDetails = productDetails;

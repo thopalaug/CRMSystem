@@ -1,11 +1,14 @@
 package com.example.CRMSystem.controller;
 
+import com.example.CRMSystem.model.Product;
 import com.example.CRMSystem.model.ProductData;
 import com.example.CRMSystem.service.ProductService;
+import com.example.CRMSystem.util.AttributeNames;
 import com.example.CRMSystem.util.Mappings;
 import com.example.CRMSystem.util.ViewNames;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
@@ -34,6 +37,14 @@ public class ProductController {
         ModelAndView mav = new ModelAndView(ViewNames.PRODUCT);
         mav.addObject("product", productService.getData());
         return mav;
+    }
+
+    @GetMapping(Mappings.ADD_PRODUCT)
+    public String addProduct(Model model){
+        Product product = new Product();
+        model.addAttribute(AttributeNames.PRODUCT, product);
+        return ViewNames.ADD_PRODUCT;
+
     }
 
 }
