@@ -12,11 +12,13 @@
             <tr>
                 <th>Order ID</th>
                 <th>Order Details</th>
+                <th>Total Cost</th>
             </tr>
 
             <tr th:each="order : ${orderData.getOrders}">
                 <td th:text="${order.id}">Order ID</td>
                 <td th:text="${order.orderDetails}">Order Details</td>
+                <td th:text="${order.totalCost}">Total Cost</td>
             </tr>
 
         </table>

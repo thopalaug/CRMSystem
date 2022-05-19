@@ -1,6 +1,8 @@
 package com.example.CRMSystem.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class OrderData {
 
@@ -8,6 +10,13 @@ public class OrderData {
     private ArrayList<Order> listOfOrders = new ArrayList<>();
 
     public OrderData() {
+        addOrder(new Order("This is an order", 15));
+        addOrder(new Order("Something cheap", 15));
+        addOrder(new Order("A very expensive crate", 15));
+    }
+
+    public List<Order> getOrders(){
+        return Collections.unmodifiableList(listOfOrders);
     }
 
     public void addOrder(Order order){

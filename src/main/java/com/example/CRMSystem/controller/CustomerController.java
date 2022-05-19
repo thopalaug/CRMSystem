@@ -9,7 +9,6 @@ import com.example.CRMSystem.util.ViewNames;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -65,12 +64,13 @@ public class CustomerController {
     }
 
 
-    @PostMapping(Mappings.EDIT_CUSTOMER)
+    /*
+    @PostMapping(Mappings.CUSTOMER)
     public String editCustomer(@ModelAttribute(AttributeNames.CUSTOMER) Customer customer, BindingResult bindingResult){
         customerData().updateCustomer(customer);
         return Mappings.REDIRECT + Mappings.CUSTOMER;
     }
-
+    */
 
     @GetMapping(Mappings.VIEW_CUSTOMER)
     public String viewCustomer(@PathVariable("id") int id, Customer customer, Model model){
