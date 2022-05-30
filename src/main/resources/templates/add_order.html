@@ -6,17 +6,27 @@
 </head>
 <body>
     <div align="center">
-        <div th:switch="@{customerData.getCustomers}">
-            <table>
+        <div>
+            <table border="1" cellpadding="5">
                 <tr>
                     <th>Name</th>
                     <th>ID</th>
                 </tr>
+
+                <tr th:each="customer : ${customerData.getCustomers}">
+                    <td th:text="${customer.name}"></td>
+                    <td th:text="${customer.id}"></td>
+                </tr>
+
             </table>
-            <tr th:each="customer : ${customerData.getCustomers}">
-                <td th:text="${customer.name}"></td>
-                <td th:text="${customer.id}"</td>
-            </tr>
+        </div>
+
+        <div>
+            <select th:field="${customer}">
+                <option th:each=" customer : ${customerData.getCustomers}" th:value="${customer.name}" th:text="${customer.name}">
+
+                </option>
+            </select>
         </div>
 
         <div>

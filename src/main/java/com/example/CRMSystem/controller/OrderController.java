@@ -34,10 +34,4 @@ public class OrderController {
         mav.addObject("order", orderService.getData());
         return mav;
     }
-
-    @GetMapping(Mappings.ADD_ORDER)
-    public String addOrder(){
-        return ViewNames.ADD_ORDER;
-    }
-
 }

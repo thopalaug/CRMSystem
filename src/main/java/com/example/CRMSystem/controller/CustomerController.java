@@ -86,4 +86,17 @@ public class CustomerController {
         return Mappings.REDIRECT + Mappings.CUSTOMER;
     }
 
+    /*
+    Tester om jeg må kjøre denne fra CustomerController pga tilgangen til customerData.
+    -Den kan hente data herifra. Må gjøre noe smart i html filen for å lage en selector.
+    Kan være det krever en egen getMapping med list eller noe.
+     */
+
+    @GetMapping(Mappings.ADD_ORDER)
+    public ModelAndView addOrder(@ModelAttribute(AttributeNames.CUSTOMER) Customer customer){
+        ModelAndView mav = new ModelAndView(ViewNames.ADD_ORDER);
+        mav.addObject("customer", customerService.getData());
+        return mav;
+    }
+
 }
